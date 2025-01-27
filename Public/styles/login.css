@@ -1,0 +1,121 @@
+div {
+    border: 5px solid black;
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+}
+article {
+    width: 75vw;
+    margin: 0 auto;
+    display: flex;
+
+    & section {
+        height: 50vh;
+        flex: 1;
+        transition-property: transform, clip-path;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
+
+        &.login-section {
+            background-color: royalblue;
+            border-radius: 10px 0 0 10px;
+
+            &.login-hide {
+                transform: translateX(100%);
+                clip-path: inset(0 100% 0 0);
+            }
+
+            &.login-show {
+                transform: translateX(0);
+                clip-path: inset(0 0 0 0);
+            }
+
+            & input {
+                margin: 2.75vh auto;
+            }
+
+            & button.submit-button {
+                margin-top: 7.5vh;
+            }
+        }
+
+        &.register-section {
+            background-color:firebrick;
+            border-radius: 0 10px 10px 0;
+            
+            &.register-hide {
+                transform: translateX(-100%);
+                clip-path: inset(0 0 0 100%);
+            }
+
+            &.register-show {
+                transform: translateX(0);
+                clip-path: inset(0 0 0 0);
+            }
+
+            & button.submit-button {
+                margin-top: 6vh;
+            }
+        }
+
+        & h2 {
+            color: #f5f5f5;
+            text-align: center;
+            font-size: 2.5vw;
+            margin: 1vh 0;
+        }
+
+        & button,& input {
+            display: block;
+            margin: 1vh auto;
+            width: 50%;
+            height: 4vh;
+            padding: 0 2.5%;
+            font-size: 1vw;
+            border: 2px grey solid;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        & input:focus {
+            box-shadow: 
+                1px 1px 5px white,
+                1px -1px 5px white,
+                -1px 1px 5px white,
+                -1px -1px 5px white;
+            outline: none;
+        }
+
+        & button {
+            background-color: #f5f5f5;
+            transition-property: transform, font-size;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            
+            &:hover {
+                font-size:1.1vw;
+                transform: scale(1.1);
+            }
+            &.login-button {
+                background-color:royalblue;
+                color: #f5f5f5;
+
+                &:active {
+                    background-color: rgb(70, 140, 225);
+                }
+            }
+
+            &.register-button {
+                background-color: firebrick;
+                color: #f5f5f5;
+
+                &:active {
+                    background-color: rgb(187, 82, 82);
+                }
+            }
+        }
+    }
+}
