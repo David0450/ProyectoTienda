@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Config;
-
 class Config {
     const DB_HOST = 'localhost';
     const DB_PORT = '3306';

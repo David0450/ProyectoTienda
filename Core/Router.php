@@ -17,8 +17,15 @@ class Router
     }
 
     public function run() 
-    {
-        $uriGet = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/';
+    {   
+        if (isset($_POST['uri'])) 
+        {
+            $uriGet = '/' . $_POST['uri'];
+        } 
+        else 
+        {
+            $uriGet = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/';
+        }
         
         foreach ($this->_uri as $key => $value) 
         {

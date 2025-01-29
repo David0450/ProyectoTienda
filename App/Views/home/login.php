@@ -4,20 +4,20 @@
         <article>
             <section id="login" class="login-section login-show">
                 <h2>Iniciar sesión</h2>
-                <form>
+                <form method="post" action="">
                     <input type="text" name="email" placeholder="E-mail">
                     <input type="password" name="password" placeholder="Contraseña">
-                    <button type="submit" name="iniciar-sesion" class="submit-button">Iniciar sesión</button>
+                    <button type="submit"  name="uri" value="user/login" class="submit-button">Iniciar sesión</button>
                 </form>
                 <button onclick="loginTransition()" type="button" class="register-button">Crear cuenta</button>
             </section>
             <section id="register" class="register-section register-hide">
                 <h2>Crear cuenta</h2>
-                <form>
-                    <input type="text" name="name" placeholder="Nombre">
+                <form method="post" action="">
+                    <input type="text" name="username" placeholder="Usuario">
                     <input type="text" name="email" placeholder="E-mail">
                     <input type="password" name="password" placeholder="Contraseña">
-                    <button type="submit" name="crear-cuenta" class="submit-button">Crear cuenta</button>
+                    <button type="submit" name="uri" value="user/signup" class="submit-button">Crear cuenta</button>
                 </form>
                 <button onclick="registerTransition()" type="button" class="login-button">Iniciar sesión</button>
             </section>
