@@ -32,12 +32,18 @@ class Router
             if (preg_match("#^$value$#", $uriGet)) 
             {
                 $action = $this->_action[$key];
-                $this->runAction($action);
+                if(isset($_GET['parametro'])) {
+                    $parametro = $_GET['parametro'];
+                } else {
+                    $parametro = null;
+                }
+
+                $this->runAction($action,$parametro);
             }
         }
     }
 
-    private function runAction($action) 
+    private function runAction($action, $parametro) 
     {
         if($action instanceof \Closure)
         {
@@ -45,9 +51,15 @@ class Router
         }  
         else 
         {
-            $params = explode('@', $action);
-            $obj = new $params[0];
-            $obj->{$params[1]}();
+            if ($parametro == null) {
+                $params = explode('@', $action);
+                $obj = new $params[0];
+                $obj->{$params[1]}();
+            } else {
+                $params = explode('@', $action);
+                $obj = new $params[0];
+                $obj->{$params[1]}($parametro);
+            }
         }
     }
 

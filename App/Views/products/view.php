@@ -7,9 +7,7 @@
                 <div class="card-body-bottom">
                     <h5 class="card-title"><?= $product['nombre'] ?></h5>
                     <p class="card-text"><?= $product['descripcion'] ?></p>
-                    <form action="" method="get">
-                        <button name="uri" value="/cart/addToCart" class="btn fw-semibold bg-gradient" style="background-color: #FF620E;">Añadir al carrito</button>
-                    </form>
+                    <button value="<?= $product['idProducto']?>" class="btn fw-semibold bg-gradient addToCartButton" style="background-color: #FF620E;">Añadir al carrito</button>
                     <?php if(isset($_SESSION['user_id']) && $_SESSION['user_role'] == 1) {?>
                         <div class="d-flex justify-content-between mt-2 column-gap-6">
                             <a href="#" class="btn fw-semibold col-5 btn-sm p-2 rounded-2 fs-6 bg-warning bg-gradient">Editar</a>

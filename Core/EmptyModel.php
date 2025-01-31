@@ -26,7 +26,7 @@ class EmptyModel {
     // Obtener un registro por clave primaria
     public function getById($id) {
         $sql = "SELECT * FROM {$this->table} WHERE {$this->primaryKey} = ?";
-        return $this->query($sql, [$id])->fetch(PDO::FETCH_ASSOC);
+        return $this->query($sql, [$id])->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Crear un nuevo registro
