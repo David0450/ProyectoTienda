@@ -24,23 +24,5 @@
         </article>
     </div>
 </main>
-<script>
-	let registerHTML = document.getElementById("register");
-let loginHTML = document.getElementById("login");
-
-function loginTransition() {
-    loginHTML.classList.toggle("login-show");
-    loginHTML.classList.toggle("login-hide");
-    registerHTML.classList.toggle("register-hide");
-    registerHTML.classList.toggle("register-show");
-}
-
-function registerTransition() {
-    registerHTML.classList.toggle("register-hide");
-    registerHTML.classList.toggle("register-show");
-    loginHTML.classList.toggle("login-hide");
-    loginHTML.classList.toggle("login-show");
-}
-</script>
 <?php $content = ob_get_clean(); ?>
 <?php include __DIR__ . '/../index.php'; ?>

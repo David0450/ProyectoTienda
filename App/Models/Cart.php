@@ -24,4 +24,9 @@ class Cart extends EmptyModel {
         $sql = "UPDATE {$this->table} SET cantidad = {$cantidad}  WHERE Productos_idProductos = {$idProducto} AND Usuarios_idUsuarios = {$idUsuario}";
         $this->query($sql);
     }
+
+    public function deleteCartProduct($idUsuario, $idProducto) {
+        $sql = "DELETE FROM {$this->table} WHERE Usuarios_idUsuarios = ? AND PRoductos_idProductos = ?";
+        $this->query($sql, [$idUsuario, $idProducto]);
+    }
 }

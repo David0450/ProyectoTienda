@@ -18,16 +18,16 @@
 
         <form class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" action="" method="get">
             <ul class="border-start border-end border-light nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fs-5">
-              <li class="px-3 border-start border-end border-light"><button href="" name="uri" value="products/view" class="nav-link px-2 text-white">Productos</button></li>
+              <li class="px-3 border-start border-end border-light"><button href="" name="uri" value="products" class="nav-link px-2 text-white">Productos</button></li>
               <li class="px-3 border-start border-end border-light"><button href="#" class="nav-link px-2 text-white">Pricing</button></li>
               <li class="px-3 border-start border-end border-light"><button href="#" class="nav-link px-2 text-white">FAQs</button></li>
               <li class="px-3 border-start border-end border-light"><button href="#" class="nav-link px-2 text-white">Sobre nosotros</button></li>
             </ul>
         </form>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-bg-white" placeholder="Buscar..." aria-label="Search">
-        </form>
+        <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" id="searchInput" onkeyup="buscador()" class="form-control form-control-dark text-bg-white" placeholder="Buscar..." aria-label="Search">
+        </div>
 
 
         <form class="user-profile-tab fs-3 p-1" method="get" action="">

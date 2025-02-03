@@ -3,8 +3,8 @@
     <div class="card profile-card">
         <div class="card-body text-center">
             <img src="../Public/assets/imgs/blank_profile.jpg" alt="User Profile" class="rounded-circle profile-img mb-3">
-            <h3 class="card-title mb-2"><?= $userData['username'] ?></h3>
-            <p class="card-text text-muted mb-3"><?php echo $userData['idRol'] == 1 ? 'Administrador de la Web' : 'Usuario' ?></p>
+            <h3 class="card-title mb-2"><?= $_SESSION['username'] ?></h3>
+            <p class="card-text text-muted mb-3"><?php echo $_SESSION['user_role'] == 1 ? 'Administrador de la Web' : 'Usuario' ?></p>
             <p class="card-text mb-4">Esto sería una prueba de una pequeña carta de usuario, hecha en bootstrap.</p>
             <div class="social-icons mb-4">
                 <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>

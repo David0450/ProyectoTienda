@@ -17,7 +17,7 @@ class UserController {
         if ($this->userModel->login()) {
             $_POST['uri'] = '/';
             $_GET['uri'] = '/';
-            include_once 'Views/home/view.php';
+            include_once 'Views/home/home_view.php';
         } else {
             include_once 'Views/home/login.php';
         }
@@ -28,7 +28,7 @@ class UserController {
         if ($this->userModel->signup()) {
             $_POST['uri'] = '/';
             $_GET['uri'] = '/';
-            include_once 'Views/home/view.php';
+            include_once 'Views/home/home_view.php';
         } else {
             include_once 'Views/home/login.php';
         }
@@ -39,12 +39,10 @@ class UserController {
         $this->userModel->logout();
         $_POST['uri'] = '/';
         $_GET['uri'] = '/';
-        include_once 'Views/home/view.php';
+        include_once 'Views/home/home_view.php';
     }
 
     public function profileView() {
-
-        $userData = $this->userModel->getById($_SESSION['user_id']);
         include_once 'Views/user/profile.php';
     }
 }

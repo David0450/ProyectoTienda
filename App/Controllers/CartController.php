@@ -13,7 +13,7 @@ class CartController {
     }
 
     public function view() {
-        require "Views/cart/view.php";
+        require "Views/cart/cart_view.php";
     }
 
     public function getCart() {
@@ -45,7 +45,29 @@ class CartController {
         if (is_int($cantidadProducto)) {
             $this->cartModel->updateProductQuantity($_SESSION['user_id'],$idProducto, $cantidadProducto+1);
         } else {
-            $this->cartModel->create(['Productos_idProductos' => $idProducto, "Usuarios_idUsuarios" => $_SESSION['user_id'], "cantidad" => $cantidadProducto]);
+            $this->cartModel->create(['Productos_idProductos' => $idProducto, "Usuarios_idUsuarios" => $_SESSION['user_id'], "cantidad" => 1]);
+        }
+    }
+
+    public function deleteCartProduct($idProducto) {
+        $this->cartModel->deleteCartProduct($_SESSION['user_id'],$idProducto);
+    }
+
+    public function increaseProductQuantity($idProducto) {
+        if(isset($_SESSION['user_id'])) {
+            $cantidadProducto = $this->cartModel->getProductQuantity($_SESSION['user_id'], $idProducto) ?? '';
+        }
+        if (is_int($cantidadProducto)) {
+            $this->cartModel->updateProductQuantity($_SESSION['user_id'],$idProducto, $cantidadProducto+1);
+        }
+    }
+
+    public function decreaseProductQuantity($idProducto) {
+        if(isset($_SESSION['user_id'])) {
+            $cantidadProducto = $this->cartModel->getProductQuantity($_SESSION['user_id'], $idProducto) ?? '';
+        }
+        if (is_int($cantidadProducto)) {
+            $this->cartModel->updateProductQuantity($_SESSION['user_id'],$idProducto, $cantidadProducto-1);
         }
     }
 }
